@@ -56,40 +56,18 @@ int main()
 
             continue;
         }
+
+        int posicao_linha = (posicao - 1) / QTD_linhas;
+        int posicao_coluna = (posicao - 1) % QTD_colunas;
         
-        if (posicao >= 1 && posicao <= 3)
+        if (tabuleiro[posicao_linha][posicao_coluna] != CARACTER)
         {
-            if (tabuleiro[0][posicao - 1] != CARACTER)
-            {
-                printf("Esse espaçoo ja foi preenchido\n");
+            printf("Esse espaço ja foi preenchido\n");
 
-                continue;
-            }
-
-            tabuleiro[0][posicao - 1] = jogador;
+            continue;
         }
-        else if (posicao >= 4 && posicao <= 6)
-        {
-            if (tabuleiro[1][posicao - 4] != CARACTER)
-            {
-                printf("Esse espaçoo ja foi preenchido\n");
 
-                continue;
-            }
-
-            tabuleiro[1][posicao - 4] = jogador;
-        }
-        else if (posicao >= 7 && posicao <= 9)
-        {
-            if (tabuleiro[2][posicao - 7] != CARACTER)
-            {
-                printf("Esse espaçoo ja foi preenchido\n");
-
-                continue;
-            }
-
-            tabuleiro[2][posicao - 7] = jogador;
-        }
+        tabuleiro[posicao_linha][posicao_coluna] = jogador;
 
         for (linha = 0; linha < QTD_linhas; linha += 1)
         {
