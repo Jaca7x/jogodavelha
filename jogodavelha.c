@@ -135,6 +135,8 @@ int main()
         if (ganhador != EMPATE)
             break;
 
+        jogadas++;
+
         if (jogadas % 2 == 0)
         {
             jogador = JOGADOR_x;
